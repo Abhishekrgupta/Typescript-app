@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./final.js"></script>
+    <script>
+        window.onload =function(){
+            var dv = document.getElementById("dv");
+            dv.innerHTML = displayTableData();
+            var addButton = document.getElementById("addBtn");
+            addButton.addEventListener("click",function(){
+                    var prodID = document.getElementById("prodId").value;
+                    var prodName = document.getElementById("prodName").value;
+                    storeProduct(prodID,prodName);
+                    dv.innerHTML = displayTableData();
+            },false);
+
+            var searchButton = document.getElementById("searchBtn");
+            searchButton.addEventListener("click",function(){
+                    var prodID = document.getElementById("prodIdSearch").value;  
+                    dv.innerHTML = searchProduct(prodID);
+            },false);
+        }
+    </script>
+</head>
+<body>
+    <div id="dv"></div>
+    Product ID: <input id="prodId" type="text" /><br />
+    Product Name: <input id="prodName" type="text" /><br />
+    <button id="addBtn" type="button">Add Record</button><br />
+
+    ProductID: <input id="prodIdSearch" type="text"  placeholder="Enter Id to search"/><br />
+    <button id="searchBtn" type="button">Search</button>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+    getProductById(id: any): Product{
+        console.log(id);
+        if(typeof id=='number'){
+            this.products.forEach((v,i) =>{
+                console.log(v.prodId);
+                if(id == v.prodId){
+                    console.log("-->"+v.prodId);
+                    return v;
+                }
+            });
+           
+        }
+        else if(typeof id =='string'){
+            this.products.forEach((v,i) =>{
+                if(id == v.ProdName){
+                    return v;
+                }
+            });
+        }
+
+            console.log("-->");
+        return new Product(-1, "No such product"); 
+    }

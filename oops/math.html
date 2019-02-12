@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Math function</title>
+    <script src="./simpleClass.js"></script>
+    <script>
+        window.onload = function(){
+            var btnAdd = document.getElementById('btnAdd');
+            btnAdd.addEventListener('click', function(){
+                //read data from input element based on id
+                //define instance of math class
+                var x = parseInt(document.getElementById('x').value);
+                var y = parseInt(document.getElementById('y').value);
+                var Obj = new MathClass(x,y);
+                document.getElementById('z').value = Obj.add();
+
+            },false);
+            var btnSub = document.getElementById('btnSub');
+            btnSub.addEventListener('click', function(){
+                var x = parseInt(document.getElementById('x').value);
+                var y = parseInt(document.getElementById('y').value);
+                var Obj = new MathClass(x,y);
+                document.getElementById('z').value = Obj.sub();
+
+            },false);
+            
+        }
+    </script>
+</head>
+<body>
+    x:<input id="x" type="text"/> <br />
+    y:<input id="y" type="text"/> <br />
+    z:<input id="z" type="text"/> <br />
+
+    <input type="button" value="Add" id="btnAdd"/> <br />
+    <input type="button" value="Sub" id="btnSub" />
+    
+    
+</body>
+</html>
